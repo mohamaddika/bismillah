@@ -1,8 +1,8 @@
 <template>
-  <div class="p-4 sm:ml-64 mt-8">
-        <h1 class="mt-5 text-center font-semibold text-2xl">Table Tabungan Siswa </h1>
+  <div class="p-4 sm:ml-64 mt-8"> <br>
+        <h1 class="mt-5 font-semibold text-2xl">Tabungan Siswa </h1> <br>
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <a  @click="create_siswa" class="float-right bg-blue-500 hover:bg-dark-700 text-white font-bold py-2 px-4 rounded btn-sm">Nambah Tabungan</a> &nbsp;
+    <a  @click="create_siswa" class="float-right bg-gray-500 hover:bg-dark-700 text-white font-bold py-2 px-4 rounded btn-sm">Nambah Tabungan</a> &nbsp;
     <table class="w-full text-sm text-left text-gray-400 dark:text-gray-400 mt-2">
         <thead class="text-xs text-gray-700 uppercase bg-gray-40 dark:bg-gray-600 dark:text-gray-400">
           <tr>

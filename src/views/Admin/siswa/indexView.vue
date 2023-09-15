@@ -1,8 +1,8 @@
 <template>
-  <div class="p-4 sm:ml-64 mt-8">
-        <h1 class="mt-5 text-center font-semibold text-2xl">Table Data Siswa </h1>
+  <div class="p-4 sm:ml-64 mt-8"> <br>
+        <h1 class="mt-5 font-semibold text-2xl">Data Siswa </h1> <br>
 <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
-    <a  @click="create_siswa" class="float-right bg-blue-500 hover:bg-dark-700 text-white font-bold py-2 px-4 rounded btn-sm">Tambah Siswa</a> &nbsp;
+    <a  @click="create_siswa" class="float-right bg-gray-500 hover:bg-dark-700 text-white font-bold py-2 px-4 rounded btn-sm">Tambah Siswa</a> &nbsp;
     <table class="w-full text-sm text-left text-gray-400 dark:text-gray-400 mt-2">
         <thead class="text-xs text-gray-700 uppercase bg-gray-40 dark:bg-gray-600 dark:text-gray-400">
             <tr>
@@ -30,11 +30,11 @@
                 </td>
                 <td class="px-8 py-4 text-right">
                     <router-link :to="'/admin/siswa/edit/'+ item.id">
-                        <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                        <a href="#" class="font-medium text-gray-600 dark:text-blue-500 hover:underline">Edit</a>
                       </router-link>
                 </td>
                 <td>
-                    <a href="#" @click="deletes(item.id)" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"  >Hapus</a>
+                    <a href="#" @click="deletes(item.id)" class="font-medium text-gray-600 dark:text-blue-500 hover:underline"  >Hapus</a>
                 </td>
             </tr>
         </tbody>
