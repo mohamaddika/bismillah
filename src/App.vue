@@ -1,13 +1,10 @@
 <template>
-
-    
       <Navbar  v-if="idMenu != 0 "></Navbar>
       <SeedbarComponent v-if="idMenu != 0 " :id-menu="idMenu " :key="idMenu"></SeedbarComponent>
    
       <div class="flex-grow flex-shrink">
         <RouterView @id-menu="setMenu($event)"></RouterView>
       </div>
-{{ console.log(idMenu) }}
 </template>
 
 

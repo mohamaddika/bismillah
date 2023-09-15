@@ -37,49 +37,48 @@
       </div>
       <button class="bg-blue-500 hover:bg-dark-700 text-white font-bold py-2 px-4 rounded">
          Save Data Edit Siswa
-        </button>
+        </button> 
    </form><br>
 </div>
 </div>
 </template>
 <script>
-
 import { onMounted } from "vue";
-import { mapActions, mapState } from 'vuex'
+import { mapActions, mapState } from "vuex";
 export default {
-props:['id'],
-data(){
-  return{
-    editsiswas:{
-      nama:null,
-      kelas:null,
-      alamat:null,
-      add:null
-    }
-  }
-},
-methods:{
-  ...mapActions('siswa',['fecteditsiswa']),
-  editsiswa(params){
-     this.fecteditsiswa(this.editsiswas)
-  }
-},
-computed:{
-  ...mapState('siswa',['singlesiswa'])
-},
-mounted() {
-  this.$store.dispatch("siswa/fetchsiswaid", this.id)
-},
-
-setup(props, context) {
-onMounted(() => {
-try {
-  context.emit("id-menu", 2);
-} catch (error) {
-  console.log(error);
-}
-});
-},
-}
-
+  props: ["id"],
+  data() {
+    return {
+      editsiswas: {
+        nama: null,
+        kelas: null,
+        alamat: null,
+      },
+    };
+  },
+  methods: {
+    ...mapActions("siswa", ["fecteditsiswa"]),
+    editsiswa() {
+      this.fecteditsiswa(this.editsiswas);
+    },
+  },
+  computed: {
+    ...mapState("siswa", ["singlesiswa"]),
+  },
+  mounted() {
+    this.$store.dispatch("siswa/fetchsiswaid", this.id);
+    this.editsiswas.nama = this.singlesiswa.nama;
+    this.editsiswas.kelas = this.singlesiswa.kelas;
+    this.editsiswas.alamat = this.singlesiswa.alamat;
+  },
+  setup(props, context) {
+    onMounted(() => {
+      try {
+        context.emit("id-menu", 2);
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  },
+};
 </script>

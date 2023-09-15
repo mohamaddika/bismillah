@@ -13,7 +13,7 @@ export default {
     actions: {
         async fetchsiswa({ commit }) {
             try {
-                const datasiswa = await axios.get("http://localhost:8000/api/siswa")
+                const datasiswa = await axios.get("https://beckendsaya.000webhostapp.com/public/api/siswa")
                 commit('SET_siswa', datasiswa.data.data)
             } catch (error) {
                 alert("Ada error");
@@ -23,7 +23,7 @@ export default {
         async fetchsiswaid({ commit },id) {
             try {
                 console.log(id)
-                const datasiswa = await axios.get(`http://localhost:8000/api/siswa/${id}`)
+                const datasiswa = await axios.get(`https://beckendsaya.000webhostapp.com/public/api/siswa/${id}`)
                 commit('SET_SINGLE_SISWA', datasiswa.data.data)
             } catch (error) {
                 alert("Ada error");
@@ -33,7 +33,11 @@ export default {
         async fetchsiswaadd({ commit },data) {
             try {
                 console.log(data)
-                const datasiswa = await axios.post("http://localhost:8000/api/siswa",data)
+                const datasiswa = await axios.post("https://beckendsaya.000webhostapp.com/public/api/siswa",data , {
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                      }
+                })
                 commit('SET_siswa', datasiswa.data.data)
             } catch (error) {
                 alert("Ada error");
@@ -44,7 +48,7 @@ export default {
         },
         async fectsiswadelete({ commit , getters },id) {
             try {
-                const datasiswa = await axios.delete(`http://localhost:8000/api/siswa/${id}`)
+                const datasiswa = await axios.post(`https://beckendsaya.000webhostapp.com/public/api/siswa/delete/${id}`)
                 commit('SET_siswa', datasiswa)
             } catch (error) {
                 alert("id ini mempunyai relasi");
@@ -57,7 +61,11 @@ export default {
 
         async fecteditsiswa({ commit ,getters},data) {
             try {
-                const datasiswa = await axios.put(`http://localhost:8000/api/siswa/${getters.getsiswaid.id}`,data)
+                const datasiswa = await axios.post(`https://beckendsaya.000webhostapp.com/public/api/siswa/update/${getters.getsiswaid.id}`,data, {
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                      }
+                })
                 commit('SET_siswa', datasiswa.data.data)
             } catch (error) {
                 alert("Ada error");
