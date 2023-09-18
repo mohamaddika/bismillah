@@ -81,7 +81,7 @@ export default {
       if (success) {
         this.$router.push('/admin/dashboard');
       } else {
-        alert("gagal");
+        alert("Login Failed");
       }
     },
   },
