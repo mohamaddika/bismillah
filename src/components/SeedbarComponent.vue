@@ -58,7 +58,7 @@ import { mapState , mapActions } from 'vuex'
       methods:{
          ...mapActions('auth', ['logout']),
          logouts(){
-            let cnfrm = confirm('KAMU YAKIN LOGOUT KAHH MANIEZ?!');
+            let cnfrm = confirm('APAKAH INGIN LOGOUT ?');
             if (cnfrm) {
                this.logout();
                window.location.href = '/';

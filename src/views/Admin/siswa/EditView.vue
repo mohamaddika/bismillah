@@ -60,6 +60,7 @@ export default {
     ...mapActions("siswa", ["fecteditsiswa"]),
     editsiswa() {
       this.fecteditsiswa(this.editsiswas);
+      let cnfrm = confirm('BERHASIL EDIT DATA SISWA');
     },
   },
   computed: {

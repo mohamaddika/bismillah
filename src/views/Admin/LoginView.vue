@@ -80,8 +80,10 @@ export default {
       const success = await this.login(credentials);
       if (success) {
         this.$router.push('/admin/dashboard');
+        let cnfrm = confirm('BERHASIL LOGIN KEHALAMAN ADMIN');
       } else {
         alert("Login Failed");
+        
       }
     },
   },

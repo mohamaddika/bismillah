@@ -63,6 +63,7 @@ export default {
     ...mapActions('siswa',['fetchsiswaadd']),
       addsiswa(){
             this.fetchsiswaadd(this.addsiswas)
+            let cnfrm = confirm('BERHASIL MENAMBAH DATA SISWA');
       }
   },
 
